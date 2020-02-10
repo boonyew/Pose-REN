@@ -6,10 +6,13 @@ import pyrealsense2 as rs
 import os
 import sys
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+print(BASE_DIR)
 ROOT_DIR = os.path.dirname(BASE_DIR)
+print(ROOT_DIR)
 sys.path.append(ROOT_DIR) # config
 sys.path.append(os.path.join(ROOT_DIR, 'utils')) # utils
 sys.path.append(os.path.join(ROOT_DIR, 'libs')) # libs
+
 from model_pose_ren import ModelPoseREN
 import util
 from util import get_center_fast as get_center
@@ -19,12 +22,12 @@ def init_device():
     pipeline = rs.pipeline()
     config = rs.config()
     config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
-    print 'config'
+    print('config')
     # Start streaming
     profile = pipeline.start(config)
     depth_sensor = profile.get_device().first_depth_sensor()
     depth_scale = depth_sensor.get_depth_scale()
-    print "Depth Scale is: " , depth_scale
+    print("Depth Scale is: " , depth_scale)
     return pipeline, depth_scale
 
 def stop_device(pipeline):
@@ -52,22 +55,26 @@ def show_results(img, results, cropped_image, dataset):
     return img_show
 
 def main():
-    # intrinsic paramters of Intel Realsense SR300
-    fx, fy, ux, uy = 463.889, 463.889, 320, 240
+    # intrinsic paramters of Intel Realsense D415
+    fx, fy, ux, uy = 628.668, 628.668, 311.662, 231.571
+
     # paramters
     dataset = 'icvl'
     if len(sys.argv) == 2:
         dataset = sys.argv[1]
-
+    print(dataset)
     lower_ = 1
     upper_ = 650
 
     # init realsense
     pipeline, depth_scale = init_device()
     # init hand pose estimation model
-    hand_model = ModelPoseREN(dataset,
-        lambda img: get_center(img, lower=lower_, upper=upper_),
-        param=(fx, fy, ux, uy), use_gpu=True)
+    try:
+        hand_model = ModelPoseREN(dataset,
+            lambda img: get_center(img, lower=lower_, upper=upper_),
+            param=(fx, fy, ux, uy), use_gpu=True)
+    except:
+        print('Model not found')
     # for msra dataset, use the weights for first split
     if dataset == 'msra':
         hand_model.reset_model(dataset, test_id = 0)

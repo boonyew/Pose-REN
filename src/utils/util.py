@@ -52,7 +52,7 @@ def pixel2world(x, fx, fy, ux, uy):
 
 def get_errors(dataset, in_file):
     if not check_dataset(dataset):
-        print('invalid dataset: {}'.format(dataset))
+        print(('invalid dataset: {}'.format(dataset)))
         exit(-1)
     labels = get_positions(get_dataset_file(dataset))
     outputs = get_positions(in_file)
@@ -65,7 +65,7 @@ def get_errors(dataset, in_file):
 
 def get_model(dataset, name='baseline', test_id = 0):
     if not check_dataset(dataset):
-        print('invalid dataset: {}'.format(dataset))
+        print(('invalid dataset: {}'.format(dataset)))
         exit(-1)
     if dataset == 'hands17':
         if name == 'baseline':
@@ -94,7 +94,7 @@ def read_depth_from_bin(image_name):
 
 def load_image(dataset, name, input_size=None, is_flip=False):
     if not check_dataset(dataset):
-        print('invalid dataset: {}'.format(dataset))
+        print(('invalid dataset: {}'.format(dataset)))
         exit(-1)
     if dataset == 'icvl':
         img = cv2.imread(name, 2)  # depth image
@@ -124,8 +124,8 @@ def load_names(dataset):
 
 def load_centers(dataset):
     with open('{}/results/{}_center.txt'.format(os.path.join(ROOT_DIR, '..'), dataset)) as f:
-        return np.array([map(float,
-            line.strip().split()) for line in f])
+        return np.array([list(map(float,
+            line.strip().split())) for line in f])
 
 
 def get_sketch_setting(dataset):
@@ -195,7 +195,7 @@ def get_joint_color(dataset):
 
 def draw_pose_old(dataset, img, pose):
     if not check_dataset(dataset):
-        print('invalid dataset: {}'.format(dataset))
+        print(('invalid dataset: {}'.format(dataset)))
         exit(-1)
     for pt in pose:
         cv2.circle(img, (int(pt[0]), int(pt[1])), 3, (0, 0, 255), -1)
@@ -207,7 +207,7 @@ def draw_pose_old(dataset, img, pose):
 
 def draw_pose(dataset, img, pose):
     if not check_dataset(dataset):
-        print('invalid dataset: {}'.format(dataset))
+        print(('invalid dataset: {}'.format(dataset)))
         exit(-1)
     colors = get_sketch_color(dataset)
     colors_joint = get_joint_color(dataset)

@@ -4,17 +4,17 @@ def combine_gt_init_label(gt_label_file, init_label_file, combined_label_file, J
     # read lables
     with open(gt_label_file, 'r') as f:
         gt_labels = f.readlines()
-    print len(gt_labels)
+    print(len(gt_labels))
     with open(init_label_file, 'r') as f:
         init_labels = f.readlines()
-    print len(init_labels)
+    print(len(init_labels))
 
     combined_poses = np.zeros((len(gt_labels), J * 3 * 2), dtype=float)
-    for idx in xrange(len(gt_labels)):
+    for idx in range(len(gt_labels)):
         # get pose
-        gt_pose = map(float, gt_labels[idx].split())
+        gt_pose = list(map(float, gt_labels[idx].split()))
         gt_pose = np.asarray(gt_pose)
-        init_pose = map(float, init_labels[idx].split())
+        init_pose = list(map(float, init_labels[idx].split()))
         init_pose = np.asarray(init_pose)
         combined_poses[idx] = np.concatenate((gt_pose, init_pose), axis=0)
     np.savetxt(combined_label_file, combined_poses, fmt='%1.3f')

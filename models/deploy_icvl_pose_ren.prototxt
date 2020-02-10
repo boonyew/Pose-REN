@@ -317,7 +317,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 0, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 0, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -347,7 +347,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -377,7 +377,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 1, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 1, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -407,7 +407,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -437,7 +437,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 3, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 3, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -467,7 +467,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -497,7 +497,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 4, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 4, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -527,7 +527,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -557,7 +557,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 6, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 6, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -587,7 +587,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -617,7 +617,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 7, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 7, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -647,7 +647,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -677,7 +677,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 9, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 9, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -707,7 +707,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -737,7 +737,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 10, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 10, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -767,7 +767,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -797,7 +797,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 12, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 12, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -827,7 +827,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -857,7 +857,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 13, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 13, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -887,7 +887,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -917,7 +917,7 @@ layer {
   python_param {
     module: "python_layers.py_generate_roi_layer"
     layer: "PyGenerateROILayer"
-    param_str: "{\'img_w\': 96, \'roi_h\': 6, \'spatial_mul\': 8, \'roi_w\': 6, \'joint_idx\': 15, \'img_h\': 96}"
+    param_str: "{\'joint_idx\': 15, \'roi_h\': 6, \'roi_w\': 6, \'img_h\': 96, \'img_w\': 96, \'spatial_mul\': 8}"
   }
 }
 layer {
@@ -947,7 +947,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -992,7 +992,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -1037,7 +1037,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -1082,7 +1082,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -1127,7 +1127,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -1172,7 +1172,7 @@ layer {
     num_output: 2048
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"
@@ -1219,7 +1219,7 @@ layer {
     num_output: 48
     weight_filler {
       type: "gaussian"
-      std: 0.0010000000475
+      std: 0.0010000000474974513
     }
     bias_filler {
       type: "constant"

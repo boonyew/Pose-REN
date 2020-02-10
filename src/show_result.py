@@ -15,7 +15,7 @@ sys.path.append(os.path.join(ROOT_DIR, 'utils'))  # utils
 import cv2
 import numpy as np
 
-from utils import util
+from .utils import util
 
 
 def show_pose(dataset_model, dataset_image, base_dir, outputs, list_file, save_dir,

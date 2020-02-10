@@ -36,8 +36,8 @@ class ModelPoseREN(object):
             init_proto_name, init_model_name = util.get_model(dataset, 'baseline')
             proto_name, model_name = util.get_model(dataset, 'pose_ren')
 
-        print init_proto_name, init_model_name
-        print proto_name, model_name
+        print((init_proto_name, init_model_name))
+        print((proto_name, model_name))
         self._net = caffe.Net(proto_name, caffe.TEST, weights=model_name)
         self._net_init = caffe.Net(init_proto_name, caffe.TEST, weights=init_model_name)
 
@@ -70,7 +70,7 @@ class ModelPoseREN(object):
         self._net.blobs['prev_pose'].reshape(batch_size, channels)
         for idx in range(batch_size):
             self._net.blobs['data'].data[idx, ...] = cropped_images[idx]
-        for it in xrange(3):
+        for it in range(3):
             self._net.blobs['prev_pose'].data[...] = prev_pose
             if self._dataset == 'hands17':
                 poses = self._net.forward()['predict']
@@ -109,7 +109,7 @@ class ModelPoseREN(object):
                     results.append(line)
                 del batch_imgs[:]
                 del batch_centers[:]
-                print('{}/{}'.format(idx + 1, len(names)))
+                print(('{}/{}'.format(idx + 1, len(names))))
         if batch_imgs:
             res, _ = self.detect_images(batch_imgs, batch_centers)
             for line in res:
@@ -146,7 +146,7 @@ class ModelPoseREN(object):
 
     def _transform_pose(self, poses, centers):
         res_poses = np.array(poses) * self._cube_size
-        num_joint = poses.shape[1] / 3
+        num_joint = int(poses.shape[1] / 3)
         centers_tile = np.tile(centers, (num_joint, 1, 1)).transpose([1, 0, 2])
         res_poses[:, 0::3] = res_poses[:, 0::3] * self._fx / centers_tile[:, :, 2] + centers_tile[:, :, 0]
         res_poses[:, 1::3] = res_poses[:, 1::3] * self._fy / centers_tile[:, :, 2] + centers_tile[:, :, 1]
